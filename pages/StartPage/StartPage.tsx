@@ -1,13 +1,13 @@
-import MainWindow from '../../components/StartPage/MainWindow';
-import Sidebar from '../../components/StartPage/Sidebar';
+import MainWindow from '../../components/PageComponents/StartPage/MainWindow';
+import Sidebar from '../../components/PageComponents/StartPage/Sidebar';
 
 const StartPage = () => {
     return (
-        <div className="flex h-4/5 min-h-screen">
-            <div>
+        <div className="flex h-screen">
+            <div className='w-1/5'>
                 <Sidebar />
             </div>
-            <div>
+            <div className='w-4/5'>
                 <MainWindow />
             </div>
         </div>

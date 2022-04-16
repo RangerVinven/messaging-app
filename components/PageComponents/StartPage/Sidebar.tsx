@@ -1,6 +1,7 @@
+
 const Sidebar = () => {
     return (
-        <div className='h-screen w-72 bg-gray-600'></div>
+        <div className='h-screen w-full bg-gray-600'></div>
     )
 }
 
