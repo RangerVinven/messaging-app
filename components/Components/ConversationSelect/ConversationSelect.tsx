@@ -1,15 +1,21 @@
-import React from 'react'
+interface Props {
+	conversation: {
+		id: Number,
+		name: string
+	}
+}
 
-export default function ConversationSelect() {
+export default function ConversationSelect(props: Props) {
+	console.log("Fda");
+	
   return (
     <div className='flex'>
-        {/* Image */}
         <div className='flex justify-center items-center mr-2'>
             <img src="#" alt="#" />
         </div>
 
         <div className='flex justify-center items-center'>
-            <h3 className='text-2xl'>Person</h3>
+            <h3 className='text-2xl'>{props.conversation.name}</h3>
         </div>
     </div>
   )

@@ -9,13 +9,17 @@ const Home: NextPage = () => {
 		{
 			id: 1,
 			name: "Daniel",
+		},
+		{
+			id: 2,
+			name: "Patrick"
 		}
 	]);
 
 	return (
 		<div className='flex'>
 			<div className='w-1/5'>
-				<Sidebar />
+				<Sidebar conversations={conversations}/>
 			</div>
 			<div className='w-4/5'>
 				<StartPage />
