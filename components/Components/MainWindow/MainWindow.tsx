@@ -1,4 +1,4 @@
-import SelectConversationHeader from "./SelectConversationHeader";
+import SelectConversationHeader from "../../PageComponents/StartPage/SelectConversationHeader";
 
 const MainWindow = () => {
     return (
