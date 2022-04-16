@@ -1,4 +1,3 @@
-import { NextPage } from 'next';
 import MainWindow from '../../components/StartPage/MainWindow';
 import Sidebar from '../../components/StartPage/Sidebar';
 
