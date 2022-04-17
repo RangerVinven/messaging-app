@@ -3,7 +3,11 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import mysql from "mysql";
 
 type Data = {
-  name: string
+  conversationIDs: [
+      {
+          id: Number
+      }
+  ]
 }
 
 export default function handler(
@@ -18,15 +22,13 @@ export default function handler(
     });
 
     connection.connect();
-
-    connection.query("SELECT id, Username FROM Users WHERE id = (SELECT `User 1` FROM Conversations WHERE id = (SELECT id FROM Users WHERE Username = 'Daniel')) OR id = (SELECT `User 2` FROM Conversations WHERE id = (SELECT id FROM Users WHERE Username = 'Daniel'));", (err: any, rows: any, fields: any) => {
+    
+    // Gets the id and Username for all the people the user has a conversation with
+    connection.query("SELECT id, Username FROM Users WHERE id IN (SELECT `User 1` FROM Conversations WHERE `User 2` = 1) OR id IN (SELECT `User 2` FROM Conversations WHERE `User 1` = 1);", (err: any, rows: any, fields: any) => {
         if (err) throw err
-
         connection.end();
-
         res.send(rows);
-    });
-    // "SELECT `User 1`, `User 2` FROM WHERE "
-    // "SELECT Username FROM Users WHERE id = (SELECT `User 1` FROM Conversations WHERE id = (SELECT id FROM Users WHERE Username = `Daniel`))"
+    })
 
+    connection.end();
 }
