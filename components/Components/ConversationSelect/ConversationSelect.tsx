@@ -1,7 +1,7 @@
 interface Props {
 	conversation: {
 		id: Number,
-		name: string
+		Username: string
 	}
 }
 
@@ -13,7 +13,7 @@ export default function ConversationSelect(props: Props) {
         </div>
 
         <div className='flex justify-center items-center'>
-            <h3 className='text-2xl'>{props.conversation.name}</h3>
+            <h3 className='text-2xl'>{props.conversation.Username}</h3>
         </div>
 		
     </div>
