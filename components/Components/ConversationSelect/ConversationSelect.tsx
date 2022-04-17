@@ -9,7 +9,7 @@ export default function ConversationSelect(props: Props) {
   return (
     <div className='flex'>
         <div className='flex justify-center items-center mr-2'>
-            <img src="#" alt="#" />
+            <img className="rounded-full" src="#" alt="#" />
         </div>
 
         <div className='flex justify-center items-center'>
