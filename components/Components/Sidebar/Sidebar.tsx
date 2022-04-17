@@ -14,8 +14,9 @@ const Sidebar = (props: Props) => {
             <>
                 {
                     props.conversations.map(conversation => (
-                        <div className="ml-2 pt-2">
+                        <div className="ml-2 pt-10 hover:cursor-pointer mr-2">
                             <ConversationSelect conversation={conversation} />
+                            <hr />
                         </div>
                     ))
                 }
